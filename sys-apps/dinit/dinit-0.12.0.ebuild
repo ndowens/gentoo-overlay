@@ -15,6 +15,6 @@ RDEPEND="${DEPEND}"
 BDEPEND="sys-devel/m4"
 
 src_install() {
-	emake PREFIX=/usr SBINDIR=/usr/bin DESTDIR=${D} install
+	emake PREFIX=/usr SBINDIR=/sbin DESTDIR=${D} install
 	rm -rf ${D}/usr/share/man
 }
