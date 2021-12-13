@@ -17,6 +17,8 @@ BDEPEND="app-text/asciidoc"
 
 PATCHES=("${FILESDIR}/0001-pactree-fix-compilation-with-pacman-6.patch"
 		 "${FILESDIR}/rankmirrors-artix.patch")
+S="${WORKDIR}/pacman-contrib-v${PV}"
+
 
 src_configure() {
 	econf
