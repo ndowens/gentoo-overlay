@@ -5,7 +5,7 @@ EAPI=8
 
 DESCRIPTION="Extra scripts for pacman"
 HOMEPAGE="https://gitlab.archlinux.org/pacman/pacman-contrib"
-SRC_URI="${HOMEPAGE}/archive/v${PV}/${PN}-${PV}.tar.gz"
+SRC_URI="https://gitlab.archlinux.org/pacman/pacman-contrib/-/archive/v${PV}/pacman-contrib-v${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
