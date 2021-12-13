@@ -120,7 +120,7 @@ src_install() {
 	find "${ED}" -xtype l -delete || die
 
 	find "${ED}" -type d -empty -delete || die
-	rm -rf "${D}"/sbin/{reboot,halt,shutdown}
+	rm -rf "${D}"/sbin ${D}/etc/{init.d,conf.d}
 }
 
 pkg_postinst() {
