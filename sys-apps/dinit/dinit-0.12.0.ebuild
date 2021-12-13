@@ -14,10 +14,6 @@ KEYWORDS="~amd64"
 RDEPEND="${DEPEND}"
 BDEPEND="sys-devel/m4"
 
-src_compile() {
-	emake PREFIX=/usr
-}
-
 src_install() {
 	emake PREFIX=/usr SBINDIR=/usr/bin DESTDIR=${D} install
 	rm -rf ${D}/usr/share/man
