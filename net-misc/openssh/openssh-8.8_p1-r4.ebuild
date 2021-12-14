@@ -427,9 +427,10 @@ src_install() {
 	fi
 
 	rmdir "${ED}"/var/empty || die
-
+	if use systemd; then
 	systemd_dounit "${FILESDIR}"/sshd.{service,socket}
 	systemd_newunit "${FILESDIR}"/sshd_at.service 'sshd@.service'
+	fi
 }
 
 pkg_preinst() {
