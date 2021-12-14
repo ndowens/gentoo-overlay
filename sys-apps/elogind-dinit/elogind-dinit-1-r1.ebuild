@@ -10,7 +10,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND="sys-apps/dinit"
+DEPEND="sys-apps/dinit
+		sys-apps/dbus-dinit"
 RDEPEND="${DEPEND}"
 S="${FILESDIR}"
 
