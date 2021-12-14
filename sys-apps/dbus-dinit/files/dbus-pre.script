@@ -1,0 +1,5 @@
+#!/bin/sh
+dbus-uuidgen --ensure=/etc/machine-id
+if [ ! -d /run/dbus ]; then
+	install -dm 755 -g 81 -o 81 /run/dbus
+fi
