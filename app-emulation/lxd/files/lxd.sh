@@ -1,3 +1,3 @@
 #!/bin/sh
-export PATH="/usr/bin:$PATH"
-exec /usr/bin/lxd -d --group=lxd
+export PATH="/usr/sbin:$PATH"
+exec /usr/sbin/lxd -d --group=lxd
