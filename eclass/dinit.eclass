@@ -44,7 +44,7 @@ dinit_install_script() {
 	local script="$1"
 	local scriptdir="$(dinit_scriptdir)"
 	exeinto "$scriptdir"
-	newexe "$script" "$script"
+	newexe "$script".sh "$script"
 }
 
 dinit_install_config() {
