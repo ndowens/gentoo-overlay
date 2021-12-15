@@ -151,8 +151,8 @@ src_install() {
 	newconfd "${FILESDIR}"/lxd-4.0.0.confd lxd
 	newinitd "${FILESDIR}"/lxd-4.0.0.initd lxd
 	elif use dinit; then
-	dinit_install_service "${FILESDIR}"/lxd
-	dinit_install_script "${FILESDIR}"/lxd.script lxd
+	install -Dm644 "$FILESDIR"/lxd -t "$D"/etc/dinit.d
+	install -Dm755 "$FILESDIR"/lxd.sh "$D"/etc/dinit.d/scripts/lxd
 	elif use systemd; then
 	systemd_dounit "${T}"/lxd.service
 	
