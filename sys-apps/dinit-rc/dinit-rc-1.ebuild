@@ -11,7 +11,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND="app-init/dinit"
+DEPEND="sys-apps/dinit"
 RDEPEND="${DEPEND}"
 S="${WORKDIR}/gentoo-dinit"
 
