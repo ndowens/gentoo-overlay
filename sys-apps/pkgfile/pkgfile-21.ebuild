@@ -24,3 +24,7 @@ src_configure() {
 		)
 	meson_src_configure
 }
+
+pkg_postinst() {
+	keepdir /var/cache/pkgfile
+}
