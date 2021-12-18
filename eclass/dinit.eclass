@@ -43,8 +43,8 @@ dinit_install_service() {
 dinit_install_script() {
 	local script="$1"
 	local scriptdir="$(dinit_scriptdir)"
-	exeinto "$scriptdir"
-	newexe "$script".sh "$script"
+	local scriptname="$2"
+	install -Dm755 "$1" ${D}/etc/dinit.d/scripts/"$2"
 }
 
 dinit_install_config() {
