@@ -28,14 +28,14 @@ dinit_install_service() {
 
 	local servicedir="$(dinit_servicedir)"
 	insinto "$servicedir"
-	newins "$service" "$service"
+	doins "$service"
 }
 
 dinit_install_script() {
 	local script="$1"
-	local scriptdir="$(dinit_scriptdir)"
 	local scriptname="$2"
-	install -Dm755 "$1" ${D}/etc/dinit.d/scripts/"$2"
+	insinto $(dinit_scriptdir)
+	newexe "$1" "$2"
 }
 
 dinit_install_config() {
