@@ -10,15 +10,6 @@
 # @BLURB: helper function to install dinit services 
 # @DESCRIPTION: This eclass provides helper to install dinit services
 
-if [[ ! ${_DINIT_ECLASS} ]]; then
-
-case ${EAPI} in
-	8) ;;
-	*) die "${ECLASS}: EAPI ${EAPI} unsupported."
-esac
-
-_DINIT_ECLASS=1
-fi
 
 dinit_servicedir() {
 	echo /etc/dinit.d
