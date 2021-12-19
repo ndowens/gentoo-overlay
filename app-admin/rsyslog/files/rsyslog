@@ -1,4 +1,4 @@
 type	=	process
-command =	/usr/sbin/rsyslog -n
+command =	/usr/sbin/rsyslogd -n
 waits-for =	loginready
 logfile	=	/var/log/dinit/rsyslog.log
