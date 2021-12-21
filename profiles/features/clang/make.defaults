@@ -11,7 +11,7 @@ CXX="clang++"
 LD="ld.lld"
 
 # linker flags
-LDFLAGS="${LDFLAGS} -fuse-ld=lld -rtlib=compiler-rt -unwindlib=libunwind -Wl,--as-needed"
+CLANG_LDFLAGS="${LDFLAGS} -fuse-ld=lld -rtlib=compiler-rt -unwindlib=libunwind -Wl,--as-needed"
 
 ## hardening flags
 #SOME_HARDENING_CFLAGS="-fPIC -fstack-protector-strong -D_FORTIFY_SOURCE=2"
@@ -25,7 +25,7 @@ SOME_HARDENING_LDFLAGS=""
 # enable hardening by default, cf. gcc[pie,ssp]
 CFLAGS="${CFLAGS} ${SOME_HARDENING_FLAGS}"
 CXXFLAGS="${CXXFLAGS} ${SOME_HARDENING_FLAGS}"
-LDFLAGS="${LDFLAGS} ${SOME_HARDENING_LDFLAGS}"
+CLANG_LDFLAGS="${CLANG_LDFLAGS} ${SOME_HARDENING_LDFLAGS}"
 
 # use LLVM-provided binutils
 AR="llvm-ar"
