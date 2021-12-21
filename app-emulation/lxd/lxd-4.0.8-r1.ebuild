@@ -17,7 +17,7 @@ IUSE="apparmor ipv6 nls verify-sig dinit openrc systemd"
 
 DEPEND="acct-group/lxd
 	app-arch/xz-utils
-	>=app-emulation/lxc-3.0.0[apparmor?,seccomp(+)]
+	app-emulation/lxc[apparmor?,seccomp(+)]
 	dev-db/sqlite:3
 	dev-libs/dqlite
 	dev-libs/lzo
