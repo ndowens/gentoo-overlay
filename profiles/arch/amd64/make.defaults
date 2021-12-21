@@ -1,26 +1,8 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-ARCH="amd64"
-ACCEPT_KEYWORDS="${ARCH}"
-
-CHOST="x86_64-pc-linux-gnu"
-CFLAGS="-O2 -pipe"
-CXXFLAGS="${CFLAGS}"
-FFLAGS="${CFLAGS}"
-FCFLAGS="${CFLAGS}"
-
-# Danny van Dyk <kugelfang@gentoo.org> (2006-06-07)
-# Multilib settings for all amd64 subprofiles.
 MULTILIB_ABIS="amd64"
+
+# Michał Górny <mgorny@gentoo.org> (2013-01-26)
+# Hide the ABI_X86 USE_EXPAND back for non-multilib profile.
 USE_EXPAND_HIDDEN="ABI_X86"
-
-# Michał Górny <mgorny@gentoo.org> (2014-06-25)
-# Make the native ABI implicit so that MULTILIB_USEDEP can be satisfied
-# by non-multilib ebuilds when non-native ABIs are disabled.
-IUSE_IMPLICIT="abi_x86_64"
-
-# Andreas K. Hüttel <dilfridge@gentoo.org> (2017-06-02)
-# Enable USE=libtirpc by default, to ease dependency resolution during
-# the stabilization of glibc-2.26. Bug 657148
-USE="libtirpc"
