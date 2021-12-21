@@ -5,20 +5,13 @@ EAPI=7
 
 DESCRIPTION="/sbin/init - parent of all processes"
 HOMEPAGE="https://savannah.nongnu.org/projects/sysvinit"
-SRC_URI="mirror://nongnu/${PN}/${P/_/-}.tar.xz"
 
-LICENSE="GPL-2"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~alpha amd64 arm arm64 hppa ~ia64 ~m68k ~mips ppc ppc64 ~riscv ~s390 sparc x86"
 IUSE="selinux ibm static kernel_FreeBSD"
 
-S="${WORKDIR}/${P/_*}"
-
-PATCHES=(
-	"${FILESDIR}/${PN}-2.86-kexec.patch" #80220
-	"${FILESDIR}/${PN}-2.94_beta-shutdown-single.patch" #158615
-	"${FILESDIR}/${PN}-2.99-shutdown-h.patch" #449354
-)
+S="${WORKDIR}/"
 
 src_prepare() {
 	echo ""
