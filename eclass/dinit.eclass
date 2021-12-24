@@ -35,8 +35,7 @@ dinit_install_script() {
 	local script="$1"
 	local scriptname="$2"
 	local scriptdir="${D}$(dinit_scriptdir)"
-	install -d "$(dinit_scriptdir)"
-	newexe "$1" "${scriptdir}/$2"
+	install -Dm755 "$1" "${scriptdir}/$2"
 }
 
 dinit_install_config() {
