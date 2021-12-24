@@ -34,8 +34,8 @@ dinit_install_service() {
 dinit_install_script() {
 	local script="$1"
 	local scriptname="$2"
-	insinto $(dinit_scriptdir)
-	newexe "$1" "$2"
+	local scriptdir="$(dinit_scriptdir)"
+	newexe "$1" "${scriptdir}/$2"
 }
 
 dinit_install_config() {
