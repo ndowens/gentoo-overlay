@@ -16,4 +16,5 @@ S="$FILESDIR"
 
 src_install() {
 	dinit_install_service sshd
+	dinit_install_script sshd.script sshd
 }
