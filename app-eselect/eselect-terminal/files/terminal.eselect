@@ -1,0 +1,13 @@
+# Copyright 1999-2015 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+DESCRIPTION="Manage terminal implementations"
+MAINTAINER="qunxyz@gmail.com"
+VERSION="0.1"
+
+SYMLINK_PATH=/usr/bin/terminal
+SYMLINK_TARGETS=( gnome-terminal terminator tilda guake yakuake roxterm eterm rxvt wterm lxterminal konsole termkit st finalterm terminology xterm lilyterm sakura rxvt-unicode kitty alacritty)
+SYMLINK_DESCRIPTION='Default terminal'
+SYMLINK_CRUCIAL=1
+
+inherit bin-symlink
