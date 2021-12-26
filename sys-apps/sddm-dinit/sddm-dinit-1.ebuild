@@ -4,7 +4,7 @@
 EAPI=8
 inherit dinit git-r3
 DESCRIPTION="Dinit script for sddm"
-EGIT_REPO_URI="https://gitea.artixlinux.org/packagesS/sddm-dinit"
+EGIT_REPO_URI="https://gitea.artixlinux.org/packagesS/sddm-dinit.git"
 LICENSE="GPL-2.0-only"
 SLOT="0"
 KEYWORDS="amd64"
