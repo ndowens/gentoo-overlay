@@ -1,7 +1,7 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-# @ECLASS: terminal.eclass
+# @ECLASS: eselect.eclass
 # @MAINTAINER:
 # Nathan <ndowens@artixlinux.org>
 # @AUTHOR:
@@ -11,5 +11,5 @@
 # @DESCRIPTION: Eclass for eselect
 
 install_eselect_module() {
-	install -Dm644 "$1" -t /usr/share/eselect/modules
+	install -Dm644 "$1" -t ${D}/usr/share/eselect/modules
 }
