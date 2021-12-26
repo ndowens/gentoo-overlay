@@ -45,7 +45,6 @@ src_configure() {
 		--with-lib=/usr/$(get_libdir)/skalibs \
 		--with-sysdeps=/usr/$(get_libdir)/skalibs \
 		--enable-shared \
-		--sbindir=/bin \
 		$(use_enable static allstatic) \
 		$(use_enable static static-libc) \
 		$(use_enable static-libs static)
@@ -56,7 +55,8 @@ src_install() {
 
 	if use sysv-utils ; then
 		"${D}/bin/s6-linux-init-maker" -f "${D}/etc/s6-linux-init/skel" "${T}/dir" || die
-		into /
+		mkdir "$D"/sbin/s6
+		into /s6
 		dosbin "${T}/dir/bin"/{halt,poweroff,reboot,shutdown,telinit}
 	fi
 }
