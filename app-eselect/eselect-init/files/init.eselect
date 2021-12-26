@@ -1,0 +1,13 @@
+# Copyright 1999-2015 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+DESCRIPTION="Manage init implementations"
+MAINTAINER="ndowens@artixlinux.org"
+VERSION="0.1"
+
+SYMLINK_PATH=/sbin/init
+SYMLINK_TARGETS=( dinit openrc s6-linux-init )
+SYMLINK_DESCRIPTION='Default init'
+SYMLINK_CRUCIAL=1
+
+inherit bin-symlink
