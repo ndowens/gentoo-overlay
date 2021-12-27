@@ -56,7 +56,7 @@ src_install() {
 	if use sysv-utils ; then
 		"${D}/bin/s6-linux-init-maker" -f "${D}/etc/s6/skel" "${T}/dir" || die
 		into /
-		dosbin "${T}/dir/bin"/{halt,poweroff,reboot,shutdown,telinit}
+		dobin "${T}/dir/bin"/{halt,poweroff,reboot,shutdown,telinit}
 	fi
 }
 
