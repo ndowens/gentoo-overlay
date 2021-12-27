@@ -66,11 +66,11 @@ src_install() {
 	exeinto "$(dinit_scriptdir)"
 	if [ -f "${_PN}.script" ]; then
 		newexe "${_PN}.script" "${_PN}"
-	elif [ -f "trunk/{_PN}d.script" ]; then
+	elif [ -f "trunk/${_PN}d.script" ]; then
 		newexe "trunk/${_PN}d.script" "${_PN}d"
-	elif [ -f "${FILESDIR}/{_PN}d.script" ]; then
+	elif [ -f "${FILESDIR}/${_PN}d.script" ]; then
 		newexe "${FILESDIR}/${_PN}d.script" "${_PN}d"
-	elif [ -f "{_PN}d.script" ]; then
+	elif [ -f "${_PN}d.script" ]; then
 		newexe "${_PN}d.script" "${_PN}d"
 	fi
 
