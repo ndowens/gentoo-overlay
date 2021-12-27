@@ -68,6 +68,8 @@ src_install() {
 		newexe "${_PN}.script" "${_PN}"
 	elif [ -f "trunk/${_PN}d.script" ]; then
 		newexe "trunk/${_PN}d.script" "${_PN}d"
+	elif [ -f "trunk/${_PN}.script" ]; then
+		newexe "trunk/${_PN}.script" "${_PN}"
 	elif [ -f "${FILESDIR}/${_PN}d.script" ]; then
 		newexe "${FILESDIR}/${_PN}d.script" "${_PN}d"
 	elif [ -f "${_PN}d.script" ]; then
