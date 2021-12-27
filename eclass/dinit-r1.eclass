@@ -55,23 +55,31 @@ src_install() {
 		doins trunk/${_PN}
 	elif [ -f "trunk/${_PN}d" ]; then
 		doins trunk/${_PN}d
+	elif [ -f "${FILESDIR}/${_PN}d" ]; then
+		doins ${FILESDIR}/${_PN}d
 	elif [ -f "${_PN}d" ]; then
 		doins ${_PN}d
 	elif [ -f "${_PN}" ]; then
 		doins ${_PN}
 	fi
 
-	insinto "$(dinit_scriptdir)"
+	exeinto "$(dinit_scriptdir)"
 	if [ -f "${_PN}.script" ]; then
 		newexe "${_PN}.script" "${_PN}"
 	elif [ -f "trunk/{_PN}d.script" ]; then
 		newexe "${_PN}d.script" "${_PN}d"
+	elif [ -f "${FILESDIR}/{_PN}d.script" ]; then
+		newexe "${FILESDIR}/${_PN}d.script" "${_PN}d"
 	elif [ -f "{_PN}d.script" ]; then
 		newexe "${_PN}d.script" "${_PN}d"
 	fi
 
+	insinto "$(dinit_confdir)"
 	if [ -f "${_PN}.conf" ]; then
-		insinto "$(dinit_confdir)"
 		newins "${_PN}.conf" ${_PN}
+	elif [ -f "trunk/${_PN}.conf" ]; then
+		newins "${_PN}.conf" "${_PN}"
+	elif [ -f "${FILESDIR}/${_PN}.conf" ]; then
+		newins "${FILESDIR}/${_PN}.conf" "${_PN}"
 	fi
 }
