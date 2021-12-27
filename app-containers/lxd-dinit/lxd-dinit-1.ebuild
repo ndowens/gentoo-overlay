@@ -5,6 +5,7 @@ EAPI=8
 inherit dinit git-r3
 DESCRIPTION="Dinit script for lxd"
 EGIT_REPO_URI="https://gitea.artixlinux.org/packagesL/lxd-dinit.git"
+EGIT_BRANCH="master"
 
 LICENSE="GPL-2.0-only"
 SLOT="0"
