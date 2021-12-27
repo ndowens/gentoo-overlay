@@ -69,7 +69,7 @@ src_install() {
 			;;
 		# openssh
 		trunk/sshd )
-			newexe trunk/sshd
+			doins trunk/sshd
 			;;
 	esac
 
