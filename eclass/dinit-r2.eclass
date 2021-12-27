@@ -49,9 +49,9 @@ dinit_install_config() {
 
 src_install() {
 	local servicedir="$(dinit_servicedir)"
-	echo "$WORKDIR"
+
 	insinto "$servicedir"
-	case "${WORKDIR}" in
+	case "${S}" in
 		"trunk/${_PN}")
 			doins trunk/${_PN}
 			;;
@@ -74,7 +74,7 @@ src_install() {
 	esac
 
 	exeinto "$(dinit_scriptdir)"
-	case "${WORKDIR}" in
+	case "${S}" in
 		"${_PN}.script" )
 			newexe "${_PN}.script" "${_PN}"
 			;;
@@ -94,7 +94,7 @@ src_install() {
 	esac
 
 	insinto "$(dinit_confdir)"
-	case "${WORKDIR}" in
+	case "${S}" in
 		"${_PN}.conf")
 			newins "${_PN}.conf" ${_PN}
 			;;
