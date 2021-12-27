@@ -103,6 +103,6 @@ src_install() {
 			;;
 		"${FILESDIR}/${_PN}.conf")
 			newins "${FILESDIR}/${_PN}.conf" "${_PN}"
-			::
+			;;
 	esac
 }
