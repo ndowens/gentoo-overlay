@@ -45,3 +45,19 @@ dinit_install_config() {
 	insinto "$confdir"
 	newins "$conf" "$conf"
 }
+
+src_install() {
+	local servicedir="$(dinit_servicedir)"
+
+	insinto "$servicedir"
+	doins "${PN/-dinit/}"
+	if [ -f "${PN/-dinit/}.script" ]; then
+		insinto "$(dinit_scriptdir)"
+		newexe "${PN/-dinit}.script" "${PN/-dinit}"
+	fi
+
+	if [ -f "${PN/-dinit/}.conf" ]; then
+		insinto "$(dinit_confdir)"
+		newins "${PN/-dinit/}.conf" ${PN/-dinit}
+	fi
+}
