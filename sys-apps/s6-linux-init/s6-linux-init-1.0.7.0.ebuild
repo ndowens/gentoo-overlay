@@ -38,7 +38,7 @@ src_configure() {
 	econf \
 		--bindir=/bin \
 		--dynlibdir=/usr/$(get_libdir) \
-		--skeldir=/etc/s6-linux-init/skel \
+		--skeldir=/etc/s6/skel \
 		--libdir=/usr/$(get_libdir)/${PN} \
 		--with-dynlib=/usr/$(get_libdir) \
 		--with-lib=/usr/$(get_libdir)/s6 \

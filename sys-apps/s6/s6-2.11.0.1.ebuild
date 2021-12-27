@@ -38,9 +38,13 @@ src_configure() {
 		--with-lib=/usr/$(get_libdir)/execline \
 		--with-lib=/usr/$(get_libdir)/skalibs \
 		--with-sysdeps=/usr/$(get_libdir)/skalibs \
-		$(usex execline '' '--disable-execline' ) \
 		--enable-shared \
 		$(use_enable static allstatic) \
 		$(use_enable static static-libc) \
 		$(use_enable static-libs static)
+}
+
+src_install() {
+	default
+	install -Dm644 ${FILESDIR}/s6log.conf "${D}"/usr/lib/sysusers.d/s6log.conf
 }
