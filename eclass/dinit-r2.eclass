@@ -34,9 +34,9 @@ dinit_install_service() {
 
 dinit_install_script() {
 	local script="$1"
-	local scriptname="$2"
-	local scriptdir="${D}$(dinit_scriptdir)"
-	install -Dm755 "$1" "${scriptdir}/$2"
+	local scriptdir="$(dinit_scriptdir)"
+	exeinto $(dinit_scriptdir)
+	newexe "$1" "${1//-dinit/}"
 }
 
 dinit_install_config() {
@@ -51,6 +51,7 @@ src_install() {
 	local servicedir="$(dinit_servicedir)"
 
 	insinto "$servicedir"
+	echo $(ls ${S})
 	case "$(ls ${S})" in
 		"trunk/${_PN}")
 			doins trunk/${_PN}
