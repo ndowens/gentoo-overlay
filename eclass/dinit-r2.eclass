@@ -49,7 +49,7 @@ dinit_install_config() {
 
 src_install() {
 	local servicedir="$(dinit_servicedir)"
-
+	echo "$WORKDIR"
 	insinto "$servicedir"
 	case "${WORKDIR}" in
 		"trunk/${_PN}")
