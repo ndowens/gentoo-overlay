@@ -14,6 +14,11 @@ DEPEND="sys-apps/dinit
 		app-containers/lxd"
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+	default
+	sed -i 's:/usr/bin:/usr/sbin:g' trunk/lxd.script
+}
+
 src_install() {
 	dinit_install_service trunk/lxd
 	dinit_install_script trunk/lxd.script lxd
