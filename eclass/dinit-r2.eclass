@@ -49,9 +49,8 @@ dinit_install_config() {
 
 src_install() {
 	local servicedir="$(dinit_servicedir)"
-	SF=$( [ -f ${S} ]; then )
 	insinto "$servicedir"
-	case " ${SF})" in
+	case "$(file -- ${S})" in
 		"trunk/${_PN}")
 			doins trunk/${_PN}
 			;;
