@@ -58,6 +58,7 @@ src_install() {
 		into /
 		dobin "${T}/dir/bin"/{halt,poweroff,reboot,shutdown,telinit}
 	fi
+	mv "$D"/bin/s6-linux-init "$D"/sbin/s6-linux-init
 }
 
 pkg_postinst() {
