@@ -10,7 +10,7 @@
 # @BLURB: helper function to install dinit services 
 # @DESCRIPTION: This eclass provides helper to install dinit services
 
-_PN="$(sed -e s:-dinit:: ${PN})"
+_PN="${PN/-dinit/}"
 
 dinit_servicedir() {
 	echo /etc/dinit.d
