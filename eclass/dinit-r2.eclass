@@ -53,19 +53,19 @@ src_install() {
 	insinto "$servicedir"
 	case "$(ls ${S})" in
 		"trunk/${_PN}")
-			doins ${S}/trunk/${_PN}
+			doins trunk/${_PN}
 			;;
 		"trunk/${_PN}d" )
-			doins ${S}/trunk/${_PN}d
+			doins trunk/${_PN}d
 			;;
 		"${FILESDIR}/${_PN}d" )
 			doins ${FILESDIR}/${_PN}d
 			;;
 		"${_PN}d" )
-			doins ${S}/${_PN}d
+			doins ${_PN}d
 			;;
 		"${_PN}" )
-			doins ${S}/${_PN}
+			doins ${_PN}
 			;;
 		# openssh
 		trunk/sshd )
