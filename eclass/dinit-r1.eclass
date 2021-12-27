@@ -53,13 +53,21 @@ src_install() {
 	insinto "$servicedir"
 	if [ -f "trunk/${_PN}" ]; then
 		doins trunk/${_PN}
+	elif [ -f "trunk/{_PN}d"] then
+		doins trunk/${_PN}d
+	elif [ -f "{_PN}d"] then
+		doins ${_PN}d
 	elif [ -f "${_PN}" ]; then
 		doins ${_PN}
 	fi
 
+	insinto "$(dinit_scriptdir)"
 	if [ -f "${_PN}.script" ]; then
-		insinto "$(dinit_scriptdir)"
 		newexe "${_PN}.script" "${_PN}"
+	elif [ -f "trunk/{_PN}d.script"] then
+		newexe "${_PN}d.script" "${_PN}d"
+	elif [ -f "{_PN}d.script"] then
+		newexe "${_PN}d.script" "${_PN}d"
 	fi
 
 	if [ -f "${_PN}.conf" ]; then
