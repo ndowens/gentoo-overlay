@@ -10,6 +10,7 @@
 # @BLURB: helper function to install dinit services 
 # @DESCRIPTION: This eclass provides helper to install dinit services
 
+_PN="$(sed -e s:-dinit:: ${PN})"
 
 dinit_servicedir() {
 	echo /etc/dinit.d
@@ -50,19 +51,19 @@ src_install() {
 	local servicedir="$(dinit_servicedir)"
 
 	insinto "$servicedir"
-	if [ -f "trunk/${PN/-dinit}" ]; then
-		doins trunk/${PN/-dinit/}
-	elif [ -f "${PN/-dinit}" ]; then
-		doins ${PN/-dinit}
+	if [ -f "trunk/${_PN}" ]; then
+		doins trunk/${_PN}
+	elif [ -f "${_PN}" ]; then
+		doins ${_PN}
 	fi
 
-	if [ -f "${PN/-dinit/}.script" ]; then
+	if [ -f "${_PN}.script" ]; then
 		insinto "$(dinit_scriptdir)"
-		newexe "${PN/-dinit}.script" "${PN/-dinit}"
+		newexe "${_PN}.script" "${_PN}"
 	fi
 
-	if [ -f "${PN/-dinit/}.conf" ]; then
+	if [ -f "${_PN}.conf" ]; then
 		insinto "$(dinit_confdir)"
-		newins "${PN/-dinit/}.conf" ${PN/-dinit}
+		newins "${_PN}.conf" ${_PN}
 	fi
 }
