@@ -48,19 +48,16 @@ dinit_install_config() {
 }
 
 src_install() {
-	local servicedir="$(dinit_servicedir)"
 	local _file 
-	local _script
-	insinto "$servicedir"
-
+	local _script="*.script"
 	if [ -d trunk ]; then
 		cd trunk
 	fi
 
 	for _file in * ; do
-		if [ $_file = *.script ]; then
+		if [ $_file = ${_script} ]; then
 			exeinto $(dinit_scriptdir)
-			newexe $_script ${_script//.script/}
+			newexe ${_script} ${_script//.script/}
 
 		elif [ $_file = ${_PN} ]; then
 			insinto $(dinit_servicedir)
