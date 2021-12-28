@@ -11,7 +11,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64"
 
-DEPEND="sys-apps/fcron
+DEPEND="sys-process/fcron
 		sys-apps/dinit"
 RDEPEND="${DEPEND}"
 
