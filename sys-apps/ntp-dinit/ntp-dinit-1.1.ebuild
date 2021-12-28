@@ -13,3 +13,8 @@ KEYWORDS="amd64"
 DEPEND="sys-apps/dinit
 		net-misc/ntp"
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	default
+	sed -i 's@bin@sbin@' trunk/ntpd
+}
