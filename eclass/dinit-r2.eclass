@@ -59,7 +59,7 @@ src_install() {
 	for _file in * ; do
 		if [ $_file = *.script ]; then
 			exeinto $(dinit_scriptdir)
-			newexe "$_file".script ${_file//.script/}
+			newexe "$_file" ${_file//.script/}
 		else 
 			insinto $(dinit_servicedir)
 			newins $_file $_file
