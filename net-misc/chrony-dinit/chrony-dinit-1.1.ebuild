@@ -15,5 +15,6 @@ DEPEND="net-misc/chrony
 		sys-apps/dinit"
 
 src_prepare() {
+	default
 	sed -i 's@bin@sbin@' trunk/chronyd
 }
