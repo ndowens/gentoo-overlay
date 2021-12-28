@@ -49,9 +49,8 @@ dinit_install_config() {
 
 src_install() {
 	local servicedir="$(dinit_servicedir)"
-
-	PF=$(find . -name $1)
-	case $PF in 
+	PP=$(find . -type f)
+	case $PP in 
 		sshd)
 		echo "Found file";;
 	esac
