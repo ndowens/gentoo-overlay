@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-inherit dinit-r2 git-r3
+inherit dinit-r3 git-r3
 
 DESCRIPTION="Dinit script for openssh"
 
