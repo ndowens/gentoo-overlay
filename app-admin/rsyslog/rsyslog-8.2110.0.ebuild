@@ -4,7 +4,7 @@
 EAPI="8"
 PYTHON_COMPAT=( python3_{7..10} )
 
-inherit autotools linux-info python-any-r1 dinit
+inherit autotools linux-info python-any-r1 dinit-r2
 
 DESCRIPTION="An enhanced multi-threaded syslogd with database support and more"
 HOMEPAGE="https://www.rsyslog.com/"
