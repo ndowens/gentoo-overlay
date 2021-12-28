@@ -3,16 +3,17 @@
 
 EAPI=8
 
+inherit dinit-r2 git-r3
 DESCRIPTION="Dinit service for chrony"
 
-LICENSE="MIT"
+EGIT_REPO_URI="https://gitea.artixlinux.org/packagesC/chrony-dinit.git"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64"
 
 DEPEND="net-misc/chrony
 		sys-apps/dinit"
-S="$FILESDIR"
 
-src_install() {
-	install -Dm644 chronyd -t ${D}/etc/dinit.d
+src_prepare() {
+	sed -i 's@bin@sbin@' trunk/chronyd
 }
