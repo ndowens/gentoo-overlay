@@ -60,18 +60,12 @@ src_install() {
 		if [ $_file = *.script ]; then
 			exeinto $(dinit_scriptdir)
 			newexe "$_file" ${_file//.script/}
-		else 
+		elif [ $_file = ${_PN} ]; then
 			insinto $(dinit_servicedir)
+			newins $_file $_file
+		elif [ $_file = *.conf ]; then
+			insinto $(dinit_confdir)
 			newins $_file $_file
 		fi
 	done
-
-	insinto "$(dinit_confdir)"
-	if [ -f "${_PN}.conf" ]; then
-		newins "${_PN}.conf" ${_PN}
-	elif [ -f "trunk/${_PN}.conf" ]; then
-		newins "${_PN}.conf" "${_PN}"
-	elif [ -f "${FILESDIR}/${_PN}.conf" ]; then
-		newins "${FILESDIR}/${_PN}.conf" "${_PN}"
-	fi
 }
