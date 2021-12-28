@@ -13,5 +13,6 @@ DEPEND="sys-apps/dinit
 		x11-misc/sddm"
 
 src_prepare() {
+	default
 	sed -i '/logind/d' trunk/sddm
 }
