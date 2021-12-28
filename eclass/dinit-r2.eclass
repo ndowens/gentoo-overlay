@@ -62,7 +62,7 @@ src_install() {
 			newexe "$_file".script ${_file//.script/}
 		else 
 			insinto $(dinit_servicedir)
-			newins $_file
+			newins $_file $_file
 		fi
 	done
 
