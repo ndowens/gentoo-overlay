@@ -1,4 +1,0 @@
-type	=	process
-command =	/etc/dinit.d/scripts/elogind
-smooth-recovery = true
-depends-on =	dbus
