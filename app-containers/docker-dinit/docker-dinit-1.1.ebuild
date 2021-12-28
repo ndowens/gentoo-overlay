@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit dinit-r1 git-r3
+inherit dinit-r2 git-r3
 
 DESCRIPTION="Dinit script for docker"
 EGIT_REPO_URI="https://gitea.artixlinux.org/packagesD/docker-dinit.git"
