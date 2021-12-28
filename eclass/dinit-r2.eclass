@@ -81,10 +81,6 @@ src_install() {
 		elif [ $_file = *.conf ] ; then
 			insinto $(dinit_confdir)
 			newins $_file $_file
-
-		elif [ "$_file" = *-pre ]; then
-			exeinto $(dinit_scriptdir)
-			newexe *-pre *-pre
 		fi
 	done
 }
