@@ -2,18 +2,20 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-inherit dinit
+inherit dinit-r2 git-r3
 DESCRIPTION="Dinit script for dhcpcd"
 
-LICENSE="MIT"
+EGIT_REPO_URI="https://gitea.artixlinux.org/packagesD/dhcpcd-dinit.git"
+
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64"
 
 DEPEND="sys-apps/dinit
 		net-misc/dhcpcd"
 RDEPEND="${DEPEND}"
-S="$FILESDIR"
 
-src_install() {
-	dinit_install_service dhcpcd
+src_prepare() {
+	default
+	sed -i 's@/usr/bin@/sbin@' trunk/dhcpcd
 }

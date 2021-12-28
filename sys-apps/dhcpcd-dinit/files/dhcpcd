@@ -1,4 +1,0 @@
-type	=	process
-command	=	/sbin/dhcpcd eno1
-restart =	false
-waits-for =	root-rw
