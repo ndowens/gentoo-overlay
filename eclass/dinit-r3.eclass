@@ -50,10 +50,7 @@ dinit_install_config() {
 src_install() {
 	local servicedir="$(dinit_servicedir)"
 
-	if [ -d "trunk" ]; then
-		cd "trunk"
-	fi
-	PF=$(test -f)
+	PF=$(find . -name $1)
 	case $PF in 
 		sshd)
 		echo "Found file";;
