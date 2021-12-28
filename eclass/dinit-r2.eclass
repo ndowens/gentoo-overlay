@@ -35,8 +35,8 @@ dinit_install_service() {
 dinit_install_script() {
 	local script="$1"
 	local scriptdir="$(dinit_scriptdir)"
-	exeinto $(dinit_scriptdir)
-	newexe "$1" "${1//-dinit/}"
+	exeinto $scriptdir
+	newexe $1 ${1//-dinit}
 }
 
 dinit_install_config() {
@@ -49,59 +49,29 @@ dinit_install_config() {
 
 src_install() {
 	local servicedir="$(dinit_servicedir)"
+	local _file
 	insinto "$servicedir"
-	case "${S}/*" in
-		"trunk/${_PN}")
-			doins trunk/${_PN}
-			;;
-		"trunk/${_PN}d" )
-			doins trunk/${_PN}d
-			;;
-		"${FILESDIR}/${_PN}d" )
-			doins ${FILESDIR}/${_PN}d
-			;;
-		"${_PN}d" )
-			doins ${_PN}d
-			;;
-		"${_PN}" )
-			doins ${_PN}
-			;;
-		# openssh
-		trunk/sshd )
-			doins ${S}/trunk/sshd
-			;;
-	esac
 
-	exeinto "$(dinit_scriptdir)"
-	case "${S}" in
-		"${_PN}.script" )
-			newexe "${S}/${_PN}.script" "${_PN}"
-			;;
-		"trunk/${_PN}d.script" )
-			newexe "${S}/trunk/${_PN}d.script" "${_PN}d"
-			;;
-		"${FILESDIR}/${_PN}d.script")
-			newexe "${FILESDIR}/${_PN}d.script" "${_PN}d"
-			;;
-		"${_PN}d.script" )
-			newexe "${S}/${_PN}d.script" "${_PN}d"
-			;;
-		# openssh
-		trunk/sshd.script )
-			newexe ${S}/trunk/sshd.script sshd
-			;;
-	esac
+	if [ -d trunk ]; then
+		cd trunk
+	fi
+
+	for _file in * ; do
+		if [ $_file = *.script ]; then
+			exeinto $(dinit_scriptdir)
+			newexe "$_file".script ${_file//.script/}
+		else 
+			insinto $(dinit_servicedir)
+			newins $_file
+		fi
+	done
 
 	insinto "$(dinit_confdir)"
-	case "${S}" in
-		"${_PN}.conf")
-			newins "${S}/${_PN}.conf" ${_PN}
-			;;
-		"trunk/${_PN}.conf")
-			newins "${S}/${_PN}.conf" "${_PN}"
-			;;
-		"${FILESDIR}/${_PN}.conf")
-			newins "${FILESDIR}/${_PN}.conf" "${_PN}"
-			;;
-	esac
+	if [ -f "${_PN}.conf" ]; then
+		newins "${_PN}.conf" ${_PN}
+	elif [ -f "trunk/${_PN}.conf" ]; then
+		newins "${_PN}.conf" "${_PN}"
+	elif [ -f "${FILESDIR}/${_PN}.conf" ]; then
+		newins "${FILESDIR}/${_PN}.conf" "${_PN}"
+	fi
 }
