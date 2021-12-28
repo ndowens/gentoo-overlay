@@ -49,7 +49,8 @@ dinit_install_config() {
 
 src_install() {
 	local servicedir="$(dinit_servicedir)"
-	PP=$(find . -type f)
+	local PP=$(find . -type f)
+	echo $PP
 	case $PP in 
 		sshd)
 		echo "Found file";;
