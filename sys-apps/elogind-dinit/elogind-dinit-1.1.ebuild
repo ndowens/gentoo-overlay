@@ -19,8 +19,3 @@ src_prepare() {
 	default
 	sed -i 's@lib@lib64@' trunk/elogind
 }
-
-src_install() {
-	default
-	rm ${D}/etc/dinit.d/logind
-}
