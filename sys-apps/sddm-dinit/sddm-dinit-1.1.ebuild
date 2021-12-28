@@ -11,3 +11,7 @@ KEYWORDS="amd64"
 
 DEPEND="sys-apps/dinit
 		x11-misc/sddm"
+
+src_prepare() {
+	sed -i '/logind/d' trunk/sddm
+}
