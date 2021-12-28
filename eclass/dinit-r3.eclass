@@ -50,10 +50,11 @@ dinit_install_config() {
 src_install() {
 	local servicedir="$(dinit_servicedir)"
 	local PP=$(find . -type f)
-	echo $PP
 	case $PP in 
-		sshd)
+		*sshd)
 		echo "Found file";;
+		*.sshd.script)
+		echo "Found script";;
 	esac
 	insinto "$servicedir"
 	if [ -f "${_PN}" ]; then
