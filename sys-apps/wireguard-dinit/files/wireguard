@@ -1,2 +1,0 @@
-type	=	scripted
-command =	/usr/bin/wg-quick up wg0

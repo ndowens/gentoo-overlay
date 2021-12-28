@@ -3,19 +3,15 @@
 
 EAPI=8
 
-inherit dinit
+inherit dinit-r2 git-r3
 
 DESCRIPTION="Dinit script for wireguard"
 
-LICENSE="MIT"
+EGIT_REPO_URI="https://gitea.artixlinux.org/packagesW/wireguard-dinit.git"
+LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 
 DEPEND="sys-apps/dinit
 		net-vpn/wireguard-tools"
 RDEPEND="${DEPEND}"
-S="$FILESDIR"
-
-src_install() {
-	dinit_install_service wireguard
-}
