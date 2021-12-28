@@ -62,8 +62,11 @@ src_install() {
 			newexe "$_file" ${_file//.script/}
 		elif [ $_file = ${_PN} ]; then
 			insinto $(dinit_servicedir)
-			newins $_file $_file
-		elif [ $_file = *.conf ]; then
+			newins $_PN $_PN
+		elif [ "$_file" = "${_PN}d" ]; then
+			insinto $(dinit_servicedir)
+			newins ${_PN}d ${_PN}d
+		elif [ $_file = *.conf ] ; then
 			insinto $(dinit_confdir)
 			newins $_file $_file
 		fi
