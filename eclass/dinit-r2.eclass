@@ -59,19 +59,29 @@ src_install() {
 
 	for _file in * ; do
 		if [ $_file = *.script ]; then
-			for $_script in *.script ; do
-				exeinto $(dinit_scriptdir)
-				newexe $_script ${_script//.script/}
-			done
+			exeinto $(dinit_scriptdir)
+			newexe $_script ${_script//.script/}
+
 		elif [ $_file = ${_PN} ]; then
 			insinto $(dinit_servicedir)
 			newins $_PN $_PN
+
+		elif [ "$_file" = ${_PN}-pre ]; then
+			insinto $(dinit_servicedir)
+			newins ${_PN}-pre ${_PN}-pre
+
 		elif [ "$_file" = "${_PN}d" ]; then
 			insinto $(dinit_servicedir)
 			newins ${_PN}d ${_PN}d
+
+		elif [ "$_file" = "${_PN}d"-pre ]; then
+			insinto $(dinit_servicedir)
+			newins "${_PN}d"-pre "${_PN}d"-pre
+
 		elif [ $_file = *.conf ] ; then
 			insinto $(dinit_confdir)
 			newins $_file $_file
+
 		elif [ "$_file" = *-pre ]; then
 			exeinto $(dinit_scriptdir)
 			newexe *-pre *-pre
