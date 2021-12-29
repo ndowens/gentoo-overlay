@@ -1,0 +1,4 @@
+type	=	process
+command =	/usr/bin/clipmenud
+respawn =	false
+logfile	=	/var/log/dinit/clipmenud.log
