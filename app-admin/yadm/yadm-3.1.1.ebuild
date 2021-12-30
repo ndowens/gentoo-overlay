@@ -65,7 +65,7 @@ src_install() {
 	dobin "${PN}"
 	doman "${PN}.1"
 
-	newbashcomp completion/bash/yadm
+	newbashcomp completion/bash/yadm yadm
 
 	insinto /usr/share/zsh/site-functions
 	newins completion/completion/_yadm _${PN}
