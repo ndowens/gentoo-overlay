@@ -68,5 +68,5 @@ src_install() {
 	newbashcomp completion/bash/yadm yadm
 
 	insinto /usr/share/zsh/site-functions
-	newins completion/completion/_yadm _yadm
+	newins completion/zsh/_yadm _yadm
 }
