@@ -23,6 +23,7 @@ fi
 src_prepare() {
 	default
 	npm config set noproxy "*"
+	npm install npm@latest
 }
 
 src_install() {
