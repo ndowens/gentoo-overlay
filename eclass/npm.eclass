@@ -21,7 +21,7 @@ _NPM_ECLASS=1
 fi
 
 src_install() {
-	npm install -g --user root --prefix "${D}"/usr ${DISTDIR}/"${P}.tar.gz"
+	npm install --legacy-peer-deps -g --user root --prefix "${D}"/usr ${DISTDIR}/"${P}.tar.gz"
 	chmod -R u=rwX,go=rX "$D"
 	chown -R root:root "$D"
 
