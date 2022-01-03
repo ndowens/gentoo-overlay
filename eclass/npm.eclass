@@ -20,9 +20,12 @@ esac
 _NPM_ECLASS=1
 fi
 
+src_prepare() {
+	default
+	npm config set noproxy "*"
+}
+
 src_install() {
-	npm config rm proxy
-	npm config rm https-proxy
 	npm install --legacy-peer-deps -g --user root --prefix "${D}"/usr ${DISTDIR}/"${P}.tar.gz"
 	chmod -R u=rwX,go=rX "$D"
 	chown -R root:root "$D"
