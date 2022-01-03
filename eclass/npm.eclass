@@ -21,7 +21,7 @@ _NPM_ECLASS=1
 fi
 
 src_install() {
-	npm install -g --user root --prefix "$pkgdir"/usr ${S}/"${P}.tar.gz"
+	npm install -g --user root --prefix "$pkgdir"/usr ${DISTDIR}/"${P}.tar.gz"
 	chmod -R u=rwX,go=rX "$D"
 	chown -R root:root "$D"
 
