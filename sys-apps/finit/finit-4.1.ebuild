@@ -18,7 +18,6 @@ DEPEND="dev-libs/libite
 RDEPEND="${DEPEND}"
 
 src_configure() {
-	default
 	./configure \
 		--prefix=/usr \
 		--sbindir=/sbin \
