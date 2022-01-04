@@ -23,6 +23,7 @@ src_configure() {
 		--sbindir=/sbin \
 		--sysconfdir=/etc \
 		--libdir=/lib64 \
+		--enable-dbus-plugin \
 		--enable-auto-reload \
 		--enable-modules-load-plugin \
 		--enable-x11-common-plugin
