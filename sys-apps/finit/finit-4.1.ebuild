@@ -21,6 +21,8 @@ src_configure() {
 	./configure \
 		--prefix=/usr \
 		--sbindir=/sbin \
+		--sysconfdir=/etc \
+		--libdir=/lib64 \
 		--enable-auto-reload \
 		--enable-modules-load-plugin \
 		--enable-x11-common-plugin
