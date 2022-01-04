@@ -20,7 +20,6 @@ RDEPEND="${DEPEND}"
 src_configure() {
 	default
 	./configure \
-		--prefix=/usr \
 		--enable-auto-reload \
 		--enable-modules-load-plugin \
 		--enable-x11-common-plugin
