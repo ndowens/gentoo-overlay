@@ -63,4 +63,5 @@
 *virtual/os-headers
 *virtual/package-manager
 *virtual/pager
+*virtual/service-manager
 *virtual/ssh

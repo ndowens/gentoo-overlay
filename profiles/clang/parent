@@ -1,2 +1,3 @@
-gentoo:default/linux/amd64/17.1/desktop
-gentoo:features/clang
+../base
+../../features/multilib
+../../features/clang
