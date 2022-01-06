@@ -363,4 +363,4 @@ x64-cygwin		prefix/windows/cygwin/x64			exp
 # tab-width: 8
 # indent-tabs-mode: t
 # End:
-amd64 clang-nomultilib dev
+amd64 clang 17.1
