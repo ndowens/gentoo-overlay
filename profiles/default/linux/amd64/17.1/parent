@@ -1,3 +1,5 @@
-..
-../../../../arch/amd64
-../../../../releases/17.0
+../base
+../arch/amd64
+../targets/desktop
+../features/multilib
+../features/clang
