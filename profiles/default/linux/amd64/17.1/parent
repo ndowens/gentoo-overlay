@@ -1,5 +1,3 @@
-../base
-../arch/amd64
-../targets/desktop
-../features/multilib
-../features/clang
+../../../../base
+../../../../features/multilib
+../../../../features/clang
