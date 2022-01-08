@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm arm64 ppc64 ~riscv x86 ~x64-macos"
 IUSE="debug static-libs test"
 RESTRICT="!test? ( test )"
 
-RDEPEND="!sys-libs/libunwind"
+#RDEPEND="!sys-libs/libunwind"
 # llvm-6 for new lit options
 DEPEND="
 	>=sys-devel/llvm-6"
