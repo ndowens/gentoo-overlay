@@ -499,6 +499,8 @@ multilib_src_configure() {
 		--with-xattr
 	)
 	export LDFLAGS="$LDFLAGS -L/usr/lib/unwwind"
+	export CFLAGS="-I/usr/libunwind/usr/include -I/usr/include -I/usr/include/linux"
+	export CXXFLAGS=$CFLAGS
 	local PKG_CONFIG
 	# Avoid crossdev's i686-pc-linux-gnu-pkg-config if building wine32 on amd64; #472038
 	tc-export PKG_CONFIG
