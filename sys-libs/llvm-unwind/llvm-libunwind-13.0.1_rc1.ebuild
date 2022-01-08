@@ -11,12 +11,11 @@ DESCRIPTION="C++ runtime stack unwinder from LLVM"
 HOMEPAGE="https://github.com/llvm-mirror/libunwind"
 
 LICENSE="Apache-2.0-with-LLVM-exceptions || ( UoI-NCSA MIT )"
-SLOT="1/13"
+SLOT="0"
 KEYWORDS=""
 IUSE="debug static-libs test"
 RESTRICT="!test? ( test )"
 
-#RDEPEND="!sys-libs/libunwind"
 # llvm-6 for new lit options
 DEPEND="
 	>=sys-devel/llvm-6"

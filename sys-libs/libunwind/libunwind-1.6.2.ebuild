@@ -58,6 +58,7 @@ multilib_src_configure() {
 		# --enable-cxx-exceptions: always enable it, headers provide the interface
 		# and on some archs it is disabled by default causing a mismatch between the
 		# API and the ABI, bug #418253
+		--prefix=/usr/lib/unwind
 		--enable-cxx-exceptions
 		--enable-coredump
 		--enable-ptrace
