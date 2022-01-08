@@ -103,7 +103,7 @@ COMMON_DEPEND="
 	truetype? ( >=media-libs/freetype-2.0.0[${MULTILIB_USEDEP}] )
 	udev? ( virtual/libudev:=[${MULTILIB_USEDEP}] )
 	udisks? ( sys-apps/dbus[${MULTILIB_USEDEP}] )
-	unwind? ( sys-libs/llvm-libunwind[${MULTILIB_USEDEP}] )
+	unwind? ( sys-libs/libunwind[${MULTILIB_USEDEP}] )
 	usb? ( virtual/libusb:1[${MULTILIB_USEDEP}]  )
 	v4l? ( media-libs/libv4l[${MULTILIB_USEDEP}] )
 	vkd3d? ( >=app-emulation/vkd3d-1.2[${MULTILIB_USEDEP}] )
@@ -498,7 +498,7 @@ multilib_src_configure() {
 	use staging && myconf+=(
 		--with-xattr
 	)
-
+	export LDFLAGS="$LDFLAGS -L/usr/lib/unwwind"
 	local PKG_CONFIG
 	# Avoid crossdev's i686-pc-linux-gnu-pkg-config if building wine32 on amd64; #472038
 	tc-export PKG_CONFIG
